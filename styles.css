@@ -1,0 +1,89 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-chart-6: var(--chart-6);
+  --font-display: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  /* Scientific dark lab — deep slate with cyan/violet signal accents */
+  --radius: 0.5rem;
+  --background: oklch(0.16 0.02 250);
+  --foreground: oklch(0.96 0.01 240);
+  --card: oklch(0.20 0.025 252);
+  --card-foreground: oklch(0.96 0.01 240);
+  --popover: oklch(0.21 0.025 252);
+  --popover-foreground: oklch(0.96 0.01 240);
+  --primary: oklch(0.78 0.16 195);          /* cyan signal */
+  --primary-foreground: oklch(0.15 0.02 250);
+  --secondary: oklch(0.26 0.03 252);
+  --secondary-foreground: oklch(0.96 0.01 240);
+  --muted: oklch(0.24 0.025 252);
+  --muted-foreground: oklch(0.68 0.02 250);
+  --accent: oklch(0.70 0.18 295);           /* violet */
+  --accent-foreground: oklch(0.15 0.02 250);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.30 0.025 252);
+  --input: oklch(0.26 0.03 252);
+  --ring: oklch(0.78 0.16 195);
+  --chart-1: oklch(0.78 0.16 195);
+  --chart-2: oklch(0.70 0.18 295);
+  --chart-3: oklch(0.82 0.17 145);
+  --chart-4: oklch(0.78 0.18 60);
+  --chart-5: oklch(0.70 0.20 15);
+  --chart-6: oklch(0.75 0.14 230);
+  --gradient-hero: linear-gradient(135deg, oklch(0.78 0.16 195) 0%, oklch(0.70 0.18 295) 100%);
+  --gradient-grid: radial-gradient(circle at 1px 1px, oklch(0.30 0.03 252) 1px, transparent 0);
+  --shadow-glow: 0 0 40px -8px color-mix(in oklab, oklch(0.78 0.16 195) 40%, transparent);
+}
+
+.dark {
+  --background: oklch(0.16 0.02 250);
+  --foreground: oklch(0.96 0.01 240);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { font-family: var(--font-sans); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    background-image: var(--gradient-grid);
+    background-size: 32px 32px;
+  }
+  .font-mono { font-family: var(--font-display); }
+}
